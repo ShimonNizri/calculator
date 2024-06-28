@@ -7,7 +7,6 @@ public class Calculator {
     public static double getSolving(String exercise) throws Exception{
         try {
             Once = true;
-            System.out.println(Arrays.toString(order("(" + exercise + ")")));
             return solveAnExercise(order("(" + exercise + ")"));
         }catch (Exception e) {
             throw new Exception(e.getMessage());
