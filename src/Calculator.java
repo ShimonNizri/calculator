@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Calculator {
     public enum MessageType {DIVISION_BY_ZERO, Syntax_Error, UNDEFINED_OPERATION}
     public static String wayToSolution;
