@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Calculator {
     public enum MessageType {DIVISION_BY_ZERO, Syntax_Error, UNDEFINED_OPERATION}
     public static String wayToSolution;
@@ -5,6 +7,7 @@ public class Calculator {
     public static double getSolving(String exercise) throws Exception{
         try {
             Once = true;
+            System.out.println(Arrays.toString(order("(" + exercise + ")")));
             return solveAnExercise(order("(" + exercise + ")"));
         }catch (Exception e) {
             throw new Exception(e.getMessage());
@@ -76,7 +79,7 @@ public class Calculator {
         }
         for(int i = 1; i < exercise.length()-1; i++) {
             if (exercise.charAt(i) == '(' && (exercise.charAt(i-1) != '*' && exercise.charAt(i-1) != '+' && exercise.charAt(i-1) != '/' && exercise.charAt(i-1) != '-')
-                    && (exercise.charAt(i-1) != '(') && (exercise.charAt(i-1) != '^')) {
+                    && (exercise.charAt(i-1) != '(') && (exercise.charAt(i-1) != '^') && (exercise.charAt(i-1) != '√')) {
                 exercise = exercise.substring(0,i) + "*" + exercise.substring(i);
                 i++;
             }
